@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -22,6 +23,12 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: 'url-loader',
+        },
+      },
     ],
   },
   resolve: {
@@ -33,4 +40,10 @@ module.exports = {
       filename: "./index.html"
     })
   ],
+  output: {
+    path: path.resolve(__dirname, 'dist'), // or your preferred output directory
+    filename: '[name].bundle.js',
+    publicPath: '/', // Ensure this is set correctly for your deployment
+    assetModuleFilename: 'assets/[hash][ext][query]' // Handling asset output
+  },
 };
