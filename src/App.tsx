@@ -36,7 +36,7 @@ function App() {
               <Title order={3} style={{ color: "#5da5bd"}}><IconChecks/>collaboration <IconChecks/> compliance <IconChecks/> solutions</Title>
           </Center>
           <Space h="xl" />
-          <Tabs defaultValue="home" variant="pills" >
+          <Tabs defaultValue="home">
             <Tabs.List grow justify="flex-end">
               <Tabs.Tab value="home">
                 <Text fw={700}>Home</Text>
@@ -58,9 +58,9 @@ function App() {
                 </Menu.Dropdown>
               </Menu> */}
               </Tabs.Tab>
-              <Tabs.Tab value="say">
+              {/* <Tabs.Tab value="say">
                 <Text fw={700}>What People Say</Text>
-              </Tabs.Tab>
+              </Tabs.Tab> */}
               <Tabs.Tab value="contact">
                 <Text fw={700}>Contact</Text>
               </Tabs.Tab>
@@ -79,9 +79,9 @@ function App() {
             <Services service/>
             </Tabs.Panel>
 
-            <Tabs.Panel value="say">
+            {/* <Tabs.Panel value="say">
               <Say />
-            </Tabs.Panel>
+            </Tabs.Panel> */}
 
             <Tabs.Panel value="contact">
               <Contact />

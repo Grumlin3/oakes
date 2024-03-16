@@ -1,11 +1,11 @@
-import { Accordion } from '@mantine/core';
-import { Text, Grid } from '@mantine/core';
-import { IconFileText, IconNotebook, IconCalendarMonth, IconLock, IconFileSearch, IconGavel } from '@tabler/icons-react';
+import { Accordion, Text, Grid, Card, Space, Box } from '@mantine/core';
+import { IconFileText, IconNotebook, IconCalendarMonth, IconLock, IconListDetails, IconChecklist, IconGavel } from '@tabler/icons-react';
+import img from '../../public/services.jpg';
 
 export const services = [
   {
-    icon: <IconFileText size={30} />,
-    value: 'Records Management Program Needs Assessment',
+    icon: <IconListDetails size={30} />,
+    value: 'Needs Assessment',
     description:
     <>
       <Text color="theme.9" size="sm" fw={700}>Pinpoint and scale records management needs</Text>
@@ -13,8 +13,8 @@ export const services = [
     </>
   },
   {
-    icon: <IconNotebook size={30} />,
-    value: 'Records Management Policies',
+    icon: <IconChecklist size={30} />,
+    value: 'Record Management Policies',
     description:
     <>
       <Text color="theme.9" size="sm" fw={700}>Craft policies centering integrity, access, and confidentiality</Text>
@@ -23,7 +23,7 @@ export const services = [
   },
   {
     icon: <IconCalendarMonth size={30} />,
-    value: 'Records Retention Schedules',
+    value: 'Retention Schedules',
     description:
     <>
       <Text color="theme.9" size="sm" fw={700}>Implement retention timelines to meet compliance and operational needs</Text>
@@ -32,22 +32,22 @@ export const services = [
   },
   {
     icon: <IconLock size={30} />,
-    value: 'Privacy Compliance',
+    value: 'Privacy & Audit Compliance',
     description:
     <>
       <Text color="theme.9" size="sm" fw={700}>Stringent adherence to privacy laws, safeguarding against breaches</Text>
       <Text c='dimmed'>Our privacy compliance service focuses on ensuring your records management practices conform to the latest privacy laws and regulations. We provide guidance on safeguarding sensitive information, reducing the risk of data breaches, and maintaining trust with your stakeholders through rigorous compliance measures.</Text>
     </>
   },
-  {
-    icon: <IconFileSearch size={30} />,
-    value: 'Compliance Audit',
-    description:
-    <>
-      <Text color="theme.9" size="sm" fw={700}>Audit and mend compliance discrepancies</Text>
-      <Text c='dimmed'>Audit services are designed to identify and rectify compliance discrepancies in your records management system. Through a thorough examination of your processes and policies, we ensure your practices are up to standard, helping you avoid legal penalties and enhance operational efficiency.</Text>
-    </>
-  },
+  // {
+  //   icon: <IconFileSearch size={30} />,
+  //   value: 'Compliance Audit',
+  //   description:
+  //   <>
+  //     <Text color="theme.9" size="sm" fw={700}>Audit and mend compliance discrepancies</Text>
+  //     <Text c='dimmed'>Audit services are designed to identify and rectify compliance discrepancies in your records management system. Through a thorough examination of your processes and policies, we ensure your practices are up to standard, helping you avoid legal penalties and enhance operational efficiency.</Text>
+  //   </>
+  // },
   {
     icon: <IconGavel size={30} />,
     value: 'Litigation Support',
@@ -62,9 +62,11 @@ export const services = [
 export const Services = (menuSelection: any) => {
   console.log('menuSelection', menuSelection)
   return (
-    <Grid>
-      <Grid.Col span={9} offset={1.5}>
-      <Accordion defaultValue={ menuSelection || services[0].value }>
+    <Box>
+    <Grid gutter='xl'>
+      <Grid.Col span={6}>
+        <Space h="xl" />
+        <Accordion defaultValue={ menuSelection || services[0].value }>
         {services.map((item) => (
           <Accordion.Item key={item.value} value={item.value}>
             <Accordion.Control style={{ color: "#176c84"}} icon={item.icon}>{item.value}</Accordion.Control>
@@ -73,6 +75,30 @@ export const Services = (menuSelection: any) => {
         ))}
       </Accordion>
       </Grid.Col>
+      <Grid.Col span={6}>
+        <Space h="xl" />
+        <Card shadow="sm" padding="lg" radius="md" withBorder >
+            <img src={img}style={{ width: '100%' }} />
+          </Card>
+      </Grid.Col>
     </Grid>
+  </Box>
+
+    // <Grid>
+    //       <Card shadow="sm" padding="lg" radius="md" withBorder >
+    //         <img src={img}style={{ width: '100%' }} />
+    //       </Card>
+
+    //   <Grid.Col span={9} offset={1.5}>
+    //   <Accordion defaultValue={ menuSelection || services[0].value }>
+    //     {services.map((item) => (
+    //       <Accordion.Item key={item.value} value={item.value}>
+    //         <Accordion.Control style={{ color: "#176c84"}} icon={item.icon}>{item.value}</Accordion.Control>
+    //         <Accordion.Panel>{item.description}</Accordion.Panel>
+    //       </Accordion.Item>
+    //     ))}
+    //   </Accordion>
+    //   </Grid.Col>
+    // </Grid>
   )
 }

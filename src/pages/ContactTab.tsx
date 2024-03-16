@@ -1,5 +1,6 @@
 import { Box, Textarea, Button, Switch, Title, Grid, Text, Space, Center, Group } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import oakes from '../../public/dalleoakes.jpg';
 
 
 export const Contact = () => {
