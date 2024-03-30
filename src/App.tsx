@@ -32,9 +32,9 @@ function App() {
           <Center>
             <Title style={{ fontVariant: 'small-caps', color: "#176c84" }}>Oakes Consulting</Title>
           </Center>
-          <Center>
+          {/* <Center>
               <Title order={3} style={{ color: "#5da5bd"}}><IconChecks/>collaboration <IconChecks/> compliance <IconChecks/> solutions</Title>
-          </Center>
+          </Center> */}
           <Space h="xl" />
           <Tabs defaultValue="home">
             <Tabs.List grow justify="flex-end">

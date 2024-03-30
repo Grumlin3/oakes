@@ -5,13 +5,11 @@ import { IconPaw, IconQuote, IconTrophy, IconNotebook, IconCalendarMonth, IconLo
 export const About = () => {
   return (
     <Box>
-        <Text color="theme.9" size="sm" fw={700}>Operations and Program Manager with 20 years of managing stakeholder relationships, developing comprehensive solutions to streamline operations, and improve customer experience.</Text>
-        <Space h="md" />
-        <Text color="theme.9" size="sm" fw={700}>Able to navigate ambiguous environments, take initiative to problem solve and create pathways ofr the team and organizational success. Focused on results as an effectual leader with ability to analyze and organization's critical business requirements, identify both opportunities and deficiencies, and develop and innovative solution to ensure compliance and elevate the end user experience.</Text>
-
+        <Space h="xl" />
       {/* <Grid>
         <Grid.Col span={7}> */}
-      <Space h="xl" />
+      {/* <Space h="xl" /> */}
+      
         <Timeline active={6} bulletSize={50} lineWidth={2}>
           {/* <Timeline.Item bullet={<IconFileText size={30} />} title="Program Management">
             <Text color="theme.9" size="sm" fw={700}>Excellence in Execution</Text>
@@ -74,6 +72,8 @@ export const About = () => {
           </Blockquote>
           </Grid.Col> */}
       {/* </Grid> */}
+      <Space h="xl" />
+      <Space h="xl" />
     </Box>
   )
 }

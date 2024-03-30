@@ -1,4 +1,4 @@
-import { Accordion, Text, Grid, Card, Space, Box } from '@mantine/core';
+import { Accordion, Text, Grid, Card, Space, Box, Center } from '@mantine/core';
 import { IconFileText, IconNotebook, IconCalendarMonth, IconLock, IconListDetails, IconChecklist, IconGavel } from '@tabler/icons-react';
 import img from '../../public/services.jpg';
 
@@ -63,8 +63,13 @@ export const Services = (menuSelection: any) => {
   console.log('menuSelection', menuSelection)
   return (
     <Box>
-    <Grid gutter='xl'>
-      <Grid.Col span={6}>
+      <Center>
+          <Card shadow="sm" padding="lg" radius="md" withBorder w='80%'>
+            <img src={img}style={{ width: '100%' }} />
+          </Card>
+      </Center>
+    {/* <Grid gutter='xl'>
+      <Grid.Col span={6}> */}
         <Space h="xl" />
         <Accordion defaultValue={ menuSelection || services[0].value }>
         {services.map((item) => (
@@ -74,14 +79,16 @@ export const Services = (menuSelection: any) => {
           </Accordion.Item>
         ))}
       </Accordion>
-      </Grid.Col>
+      {/* </Grid.Col>
       <Grid.Col span={6}>
         <Space h="xl" />
         <Card shadow="sm" padding="lg" radius="md" withBorder >
             <img src={img}style={{ width: '100%' }} />
           </Card>
       </Grid.Col>
-    </Grid>
+    </Grid> */}
+    <Space h="xl" />
+    <Space h="xl" />
   </Box>
 
     // <Grid>

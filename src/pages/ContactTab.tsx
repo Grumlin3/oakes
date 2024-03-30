@@ -25,7 +25,7 @@ export const Contact = () => {
 
   return (
     <Box>
-      <Center>
+      {/* <Center>
         <Title order={5} style={{ color: "#176c84"}}>Contact (123) 456-7890, or email us below to get in touch</Title>
       </Center>
       <Space h="xl" />
@@ -76,7 +76,41 @@ export const Contact = () => {
       <Space h="md" />
       <Center>
         <Title order={3} style={{ color: "#176c84"}}>We look forward to hearing from you.</Title>
-      </Center>
+      </Center> */}
+      <Title order={3} style={{ color: "#176c84"}}>Tell us how we can help</Title>
+      <Space h="lg" />
+      <form onSubmit={form.onSubmit((values) => sendInfo(values))}>
+        <Textarea
+          size='sm'
+          autosize
+          variant='filled'
+          placeholder=""
+          {...form.getInputProps('form')}
+        />
+        <Text mt='sm' size='xs' color="theme.9">Which services would you like to hear more about?</Text>
+          <Switch
+            mt='md'
+            label="Information Management Services"
+            color="theme.7"
+            {...form.getInputProps('service1', { type: 'checkbox' })}
+          />
+          <Switch
+            mt='md'
+            label="Secure Records Services"
+            color="theme.7"
+
+            {...form.getInputProps('service2', { type: 'checkbox' })}
+          />
+          <Switch
+            mt='md'
+            label="Compliance Services"
+            color="theme.7"
+            {...form.getInputProps('service3', { type: 'checkbox' })}
+          />
+        <Group justify="left" mt='lg'>
+          <Button type="submit" variant='outline'>Submit</Button>
+        </Group>
+      </form>
     </Box>
   )
 }
