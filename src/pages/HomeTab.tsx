@@ -9,7 +9,7 @@ export const Home = () => {
       <Grid gutter='xl'>
         <Grid.Col span={{ base: 12, md: 6, lg: 8 }}>
           <Space h="xl" />
-          <Title style={{ color: "#176c84"}}>Your partners in trust</Title>
+          <Title style={{ color: "##0063FF"}}>Your partners in trust</Title>
           <Space h="md" />
           {/* <Text  style={{ textAlign: 'justify' }} size='sm' color="theme.9">Our consultancy stands on the pillar of independence, ensuring that our evaluations and recommendations are conducted without any vendor bias. This impartial stance, however, does not preclude us from leveraging strong relationships with various vendors, developed over years of industry engagement. Such connections are instrumental in addressing our clients' complex records management needs effectively.</Text> */}
           <Space h="md" />
@@ -30,15 +30,15 @@ export const Home = () => {
      
             icon={
               <ThemeIcon color="#white" size={36} radius="md">
-                <IconChecks style={{  color: "#5da5bd", width: rem(40), height: rem(40) }} />
+                <IconChecks style={{  color: "#0063FF", width: rem(40), height: rem(40) }} />
               </ThemeIcon>
             }
           >
-            <List.Item style={{  color: "#5da5bd" }}>collaboration</List.Item>
-            <List.Item style={{  color: "#5da5bd" }}>compliance</List.Item>
-            <List.Item style={{  color: "#5da5bd" }}>security</List.Item>
-            <List.Item style={{  color: "#5da5bd" }}>solutions</List.Item>
-            <List.Item style={{  color: "#5da5bd" }}>support</List.Item>
+            <List.Item style={{  color: "#0063FF" }}>collaboration</List.Item>
+            <List.Item style={{  color: "#0063FF" }}>compliance</List.Item>
+            <List.Item style={{  color: "#0063FF" }}>security</List.Item>
+            <List.Item style={{  color: "#0063FF" }}>solutions</List.Item>
+            <List.Item style={{  color: "#0063FF" }}>support</List.Item>
           </List>
           </Center>
     

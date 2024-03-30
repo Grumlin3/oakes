@@ -13,29 +13,17 @@ export const theme = createTheme({
   primaryColor: 'theme',
   defaultRadius: 0,
   colors: {
-    // 'theme': [
-    //   "#eef3ff",
-    //   "#dce4f5",
-    //   "#b9c7e2",
-    //   "#94a8d0",
-    //   "#748dc1",
-    //   "#5f7cb8",
-    //   "#5474b4",
-    //   "#44639f",
-    //   "#39588f",
-    //   "#2d4b81"
-    // ]
     theme: [
-      "#e6f9fe",
-      "#daeef4",
-      "#b7d9e4",
-      "#91c4d3",
-      "#72b1c5",
-      "#5da5bd",
-      "#50a1ba",
-      "#3f8ca4",
-      "#317c94",
-      "#176c84"
+      "#e5f4ff",
+      "#cde2ff",
+      "#9bc2ff",
+      "#64a0ff",
+      "#3984fe",
+      "#1d72fe",
+      "#0969ff",
+      "#0058e4",
+      "#004ecc",
+      "#0043b5"
     ]
   },
   primaryShade: { light: 9 },

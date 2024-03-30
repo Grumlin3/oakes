@@ -74,7 +74,7 @@ export const Services = (menuSelection: any) => {
         <Accordion defaultValue={ menuSelection || services[0].value }>
         {services.map((item) => (
           <Accordion.Item key={item.value} value={item.value}>
-            <Accordion.Control style={{ color: "#176c84"}} icon={item.icon}>{item.value}</Accordion.Control>
+            <Accordion.Control style={{ color: "#0063FF"}} icon={item.icon}>{item.value}</Accordion.Control>
             <Accordion.Panel>{item.description}</Accordion.Panel>
           </Accordion.Item>
         ))}
@@ -87,8 +87,8 @@ export const Services = (menuSelection: any) => {
           </Card>
       </Grid.Col>
     </Grid> */}
-    <Space h="xl" />
-    <Space h="xl" />
+          {/* <Space h="xl" />
+      <Space h="xl" /> */}
   </Box>
 
     // <Grid>

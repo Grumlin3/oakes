@@ -77,7 +77,7 @@ export const Contact = () => {
       <Center>
         <Title order={3} style={{ color: "#176c84"}}>We look forward to hearing from you.</Title>
       </Center> */}
-      <Title order={3} style={{ color: "#176c84"}}>Tell us how we can help</Title>
+      <Title order={3} style={{ color: "##0063FF"}}>Tell us how we can help</Title>
       <Space h="lg" />
       <form onSubmit={form.onSubmit((values) => sendInfo(values))}>
         <Textarea

@@ -7,7 +7,7 @@ export const Say = () => {
     <Box>
       <Grid>
         <Grid.Col span={9} offset={1.5} >
-          <Title order={2} style={{ color: "#5da5bd"}}>What our clients are saying...</Title>
+          <Title order={2} style={{ color: "#0063FF"}}>What our clients are saying...</Title>
           <Blockquote color="theme.8" cite="– Indiana Bones" icon={<IconPaw />} mt="xl">
             "The consulting services shine in innovation and strategy, easily leading the field. Missteps are rare and minor, yet the outstanding results are undeniable, showcasing unparalleled mastery and leadership. A true trendsetter, this consultancy earns both respect and admiration for its skill and insight."          </Blockquote>
           <Blockquote color="theme.2" cite="– Louie aka Lucifer" icon={<IconTrophy />} mt="xl">
