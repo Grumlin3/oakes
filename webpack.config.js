@@ -40,10 +40,4 @@ module.exports = {
       filename: "./index.html"
     })
   ],
-  output: {
-    path: path.resolve(__dirname, 'dist'), // or your preferred output directory
-    filename: '[name].bundle.js',
-    publicPath: '/', // Ensure this is set correctly for your deployment
-    assetModuleFilename: 'assets/[hash][ext][query]' // Handling asset output
-  },
-};
+}
