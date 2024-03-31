@@ -1,111 +1,77 @@
-import { Box, Textarea, Button, Switch, Title, Grid, Text, Space, Center, Group } from '@mantine/core';
+import { Box, Text, Textarea, Button, Space, Group, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import oakes from '../../public/dalleoakes.jpg';
-
+import { useCallback } from "react";
 
 export const Contact = () => {
   const form = useForm({
     initialValues: {
+      name: '',
+      employer: '',
+      email: '',
       query: '',
-      service1: false,
-      service2: false,
-      service3: false,
-
     },
 
     validate: {
+      name: (value) => (value.trim() === '') ? 'Name require' : null,
+      employer: (value) => (value.trim() === '') ? 'Company name required' : null,
+      email: (value) => (value.trim() === '') ? 'Email required' : null,
       query: (value) => (value.trim() === '') ? 'Please tell us about your interest' : null
     },
-  });
+  })
 
-  const sendInfo = (values: any) => {
-    console.log('values', values)
-    window.open(`mailto:patrick@oakesconsulting.com?subject=${values.subject || 'Consulting inquiry'}&body=${values.query}`);
-  }
+  const googleFormUrl='https://docs.google.com/forms/d/e/1FAIpQLSceFF8Uymm3_UNrBih8a_uHoaUMT-P_HrtMp1BzumDdq_vdvg/formResponse?'
+  const sendInfo = useCallback(
+      async ({ name, employer, email, query }: any) => {
+          await fetch(
+            googleFormUrl +
+              new URLSearchParams({
+                "entry.796953387": name,
+                "entry.1997181444": employer,
+                "entry.768626585": email,
+                "entry.9454861": query,
+              }),
+            {
+              mode: "no-cors",
+            }
+          )
+          form.reset()
+      }, []
+    )
 
   return (
     <Box>
-      {/* <Center>
-        <Title order={5} style={{ color: "#176c84"}}>Contact (123) 456-7890, or email us below to get in touch</Title>
-      </Center>
-      <Space h="xl" />
       <form onSubmit={form.onSubmit((values) => sendInfo(values))}>
-        <Grid>
-          <Grid.Col span={4.5} offset={1.5} >
-          <Text fw={500} color="theme.9">What services are you interested in?</Text>
-          <Switch
-            mt='md'
-            label="Information Management Services"
-            color="theme.7"
-            {...form.getInputProps('service1', { type: 'checkbox' })}
-          />
-          <Switch
-            mt='md'
-            label="Secure Records Services"
-            color="theme.7"
+        <Text size='sm' fw={300} style={{ fontVariant: 'small-caps' }}>Name</Text>
+        <TextInput
+          size='sm'
+          variant='filled'
+          {...form.getInputProps('name', { type: 'input' })}
+        />
+        <Space h="sm" />
+        <Text size='sm' fw={300} style={{ fontVariant: 'small-caps' }}>Email</Text>
 
-            {...form.getInputProps('service2', { type: 'checkbox' })}
-          />
-          <Switch
-            mt='md'
-            label="Compliance Services"
-            color="theme.7"
-            {...form.getInputProps('service3', { type: 'checkbox' })}
-          />
-          </Grid.Col>
-          <Grid.Col span={4.5}>
-            <Text size='sm' mb='md'>Tell us how we can help.</Text>
-            <Textarea
-              size='sm'
-              autosize
-              variant='filled'
-              placeholder=""
-              {...form.getInputProps('form')}
-            />
-            <Group justify="right" mt='md'>
-              <Button type="submit" variant='outline'>Submit</Button>
-            </Group>
+        <TextInput
+          size='sm'
+          variant='filled'
+          {...form.getInputProps('email', { type: 'input' })}
+        />
+        <Space h="sm" />
+        <Text size='sm' fw={300} style={{ fontVariant: 'small-caps' }}>Company</Text>
 
-          </Grid.Col>
+        <TextInput
+          size='sm'
+          variant='filled'
+          {...form.getInputProps('employer', { type: 'input' })}
+        />
+        <Space h="sm" />
+        <Text size='sm' fw={300} style={{ fontVariant: 'small-caps' }}>Tell us how we can help</Text>
 
-
-
-        </Grid>
-      </form>
-      <Space h="xl" />
-      <Space h="md" />
-      <Center>
-        <Title order={3} style={{ color: "#176c84"}}>We look forward to hearing from you.</Title>
-      </Center> */}
-      <Title order={3} style={{ color: "##0063FF"}}>Tell us how we can help</Title>
-      <Space h="lg" />
-      <form onSubmit={form.onSubmit((values) => sendInfo(values))}>
         <Textarea
           size='sm'
           autosize
           variant='filled'
           placeholder=""
-          {...form.getInputProps('form')}
-        />
-        <Text mt='sm' size='xs' color="theme.9">Which services would you like to hear more about?</Text>
-          <Switch
-            mt='md'
-            label="Information Management Services"
-            color="theme.7"
-            {...form.getInputProps('service1', { type: 'checkbox' })}
-          />
-          <Switch
-            mt='md'
-            label="Secure Records Services"
-            color="theme.7"
-
-            {...form.getInputProps('service2', { type: 'checkbox' })}
-          />
-          <Switch
-            mt='md'
-            label="Compliance Services"
-            color="theme.7"
-            {...form.getInputProps('service3', { type: 'checkbox' })}
+          {...form.getInputProps('query', { type: 'input' })}
           />
         <Group justify="left" mt='lg'>
           <Button type="submit" variant='outline'>Submit</Button>

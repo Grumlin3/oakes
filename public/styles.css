@@ -19,3 +19,7 @@
 .mantine-Textarea-input {
     min-height: 120px !important;
 }
+
+.mantine-TextInput-label {
+    font-weight: '700' !important;
+}
