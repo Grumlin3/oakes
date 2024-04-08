@@ -1,10 +1,11 @@
-import { Box, Title, Text, Textarea, Button, Space, Group, TextInput } from '@mantine/core';
-import { useForm } from '@mantine/form';
-import { IconAt, IconMail, IconPhone } from '@tabler/icons-react';
-import { useCallback } from "react";
-import { colors } from '../theme';
+import { Box, Title, Text, Textarea, Button, Space, Group, TextInput } from '@mantine/core'
+import { useForm } from '@mantine/form'
+import { IconAt, IconMail } from '@tabler/icons-react'
+import { useCallback } from "react"
+import { colors } from '../theme'
+import { renderHighlightedText } from '../utils'
 
-export const Contact = () => {
+export default ({searchQuery}: any) => {
   const form = useForm({
     initialValues: {
       name: '',
@@ -40,14 +41,19 @@ export const Contact = () => {
       }, []
     )
 
+  const contactUs = "If you're facing challenges with Records Management or need an operational audit, we're here to help. Reach out to see how we can assist in elevating your organization's records management strategies."
+
   return (
     <Box>
       <Title order={2} style={{ color: colors[6], fontVariant: 'small-caps', fontWeight: '400' }}>Get in touch with us</Title>
+      <Space h="xs" />
+      <Text size='sm'>
+        {renderHighlightedText(contactUs, searchQuery)}
+
+      </Text>
       <Space h="md" />
-      <Text size='sm'>If you're facing challenges with your Records Management system, we're here to help. Reach out to see how Oakes Consulting can assist in elevating your organization's records management strategies.</Text>
-      <Space h="md" />
-      <Title order={4} style={{ color: colors[6], fontWeight: '400' }}>Simplify connection with our contact form.</Title>
-      <Text size='sm'>Just fill in your name, email, company and role, and let us know how we can assist you.</Text> 
+      <Text color={colors[6]} size='sm'>Simplify connection with our contact form.</Text> 
+      <Text size='sm'>Please provide the following information and let us know how we can assist you.</Text> 
       <Space h="md" />
       <form onSubmit={form.onSubmit((values) => sendInfo(values))}>
         <Text size='sm' fw={300} style={{ fontVariant: 'small-caps'}}>Name</Text>
@@ -73,7 +79,7 @@ export const Contact = () => {
           {...form.getInputProps('employer', { type: 'input' })}
         />
         <Space h="sm" />
-        <Text size='sm' fw={300} style={{ fontVariant: 'small-caps'}}>Tell us how we can help.</Text>
+        <Text size='sm' fw={300} style={{ fontVariant: 'small-caps'}}>Tell us how we can help</Text>
 
         <Textarea
           size='sm'
@@ -86,14 +92,20 @@ export const Contact = () => {
           <Button color={colors[6]} type="submit" style={{ fontVariant: 'small-caps'}}>Submit</Button>
         </Group>
       </form>
-      <Space h="xl" />
-      <Text size='md' c='dimmed'><IconMail size={19}/> P.O. Box 31225, Seattle WA, 98103</Text>
-      <Text size='md' c='dimmed'><IconPhone size={19}/> 303.669-6244</Text>
-      <Text size='md' c='dimmed'><IconAt size={19}/> info@proconsulting.com</Text>
+      <Space h="lg" />
+
+      <Group m='xs'>
+        <IconMail color={colors[6]} size={30}/> 
+        <Text size='md' c='dimmed' style={{ fontVariant: 'small-caps' }}>P.O. Box 31225, Seattle WA, 98103</Text>
+      </Group>
+
+      <Group m='xs'>
+        <IconAt color={colors[6]} size={30}/> 
+        <Text size='md' c='dimmed' style={{ fontVariant: 'small-caps' }}>patrickroakesconsulting@gmail.com</Text>
+      </Group>
+     
       <Space h="xl" />
       <Space h="xl" />
     </Box>
   )
 }
-
-
