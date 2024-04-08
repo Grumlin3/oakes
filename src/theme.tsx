@@ -1,6 +1,19 @@
 import { createTheme } from '@mantine/core'
 
-export const theme = createTheme({
+export const colors = [
+  "#e5f4ff",
+  "#cde2ff",
+  "#9bc2ff",
+  "#64a0ff",
+  "#3984fe",
+  "#1d72fe",
+  "#0969ff",
+  "#0058e4",
+  "#004ecc",
+  "#0043b5"
+]
+
+export const siteTheme = createTheme({
   fontSizes: {
     xs: '12px',
     sm: '16px',
@@ -8,6 +21,7 @@ export const theme = createTheme({
     lg: '20px',
     xl: '22px',
   },
+  // fontFamily: 'Barlow Semi Condensed", sans-serif',
   white: '#fff',
   black: '#000',
   primaryColor: 'theme',

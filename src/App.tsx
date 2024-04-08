@@ -1,6 +1,6 @@
 import "@mantine/core/styles.css";
 import "../public/styles.css";
-import { theme } from './theme';
+import { siteTheme, colors } from './theme';
 import { 
   MantineProvider,
   AppShell,
@@ -20,27 +20,30 @@ import { Services } from './pages/ServicesTab';
 
 function App() {
   return (
-    <MantineProvider theme={theme}>
+    <MantineProvider theme={siteTheme}>
       <AppShell>
         <Container size='md' p='md'>
           <Space h="xl" />
           <Center>
-            <Title style={{ fontVariant: 'small-caps', color: "#0063FF" }}>Oakes Consulting</Title>
+            <Title style={{ fontVariant: 'small-caps', color: colors[8], fontWeight: '500' }}>Oakes Consulting</Title>
+          </Center>
+          <Center>
+            <Title order={4} mt='-4' style={{ fontVariant: 'small-caps', color: colors[6], fontWeight: '500'}}>Strategic Advisory & Consulting Services</Title>
           </Center>
           <Space h="xl" />
-          <Tabs defaultValue="home">
+          <Tabs color={colors[5]} defaultValue="home">
             <Tabs.List grow justify="flex-end">
               <Tabs.Tab value="home">
-                <Text size='lg' fw={500} style={{ fontVariant: 'small-caps' }}>Home</Text>
+                <Text style={{ fontVariant: 'small-caps' }}>Home</Text>
               </Tabs.Tab>
               <Tabs.Tab value="services">
-                <Text size='lg' fw={500} style={{ fontVariant: 'small-caps' }}>Services</Text>
+                <Text style={{ fontVariant: 'small-caps' }}>Services</Text>
               </Tabs.Tab>
               <Tabs.Tab value="about">
-                <Text size='lg' fw={500} style={{ fontVariant: 'small-caps' }}>About</Text>
+                <Text style={{ fontVariant: 'small-caps' }}>About</Text>
               </Tabs.Tab>
               <Tabs.Tab value="contact">
-                <Text size='lg' fw={500} style={{ fontVariant: 'small-caps' }}>Contact</Text>
+                <Text style={{ fontVariant: 'small-caps' }}>Contact</Text>
               </Tabs.Tab>
             </Tabs.List>
             <Space h="xl" />
@@ -59,9 +62,10 @@ function App() {
           </Tabs>
         </Container>
         <AppShell.Footer>
+          <Space h="xl" />
           <Center>
             <Text c='dimmed' size='xs'>
-              ©2024 Patrick R Oakes Consulting. All rights reserved.
+              ©2024 Oakes Consulting. All rights reserved.
             </Text>
           </Center>
           <Space h="xl" />

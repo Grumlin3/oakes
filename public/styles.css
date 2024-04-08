@@ -9,10 +9,10 @@
 
 .mantine-Card-root[data-with-border],
 .mantine-Card-root[data-with-border].isActive {
-    border-color: var(--mantine-color-theme-light-color);
+    border-color: var(--mantine-color-theme-6);
     box-shadow:
-      inset 0 0 0 1px var(--mantine-color-theme-light-color),
-      /* Darker purple inner border */ 0 0 0 5px var(--mantine-color-theme-1); /* Lighter purple outer border */
+      inset 0 0 0 1px var(--mantine-color-theme-6),
+      0 0 0 5px var(--mantine-color-theme-1);
     border-radius: 0%;
 }
 

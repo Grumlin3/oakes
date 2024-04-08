@@ -1,58 +1,67 @@
-import { Accordion, Text, Card, Space, Box, Center } from '@mantine/core';
+import { Accordion, Text, Grid, Space, Box, Title } from '@mantine/core';
 import { IconListDetails, IconScale, IconAdjustmentsCheck, IconClockRecord, IconFiles } from '@tabler/icons-react';
-import img from '../../public/services.jpg';
+import { colors } from '../theme';
+import img from '../../public/dalle1.jpg'
 
 export const services = [
   {
-    icon: <IconListDetails size={30} />,
-    value: 'Needs Assessment',
-    short: <Text>Pinpoint and scale records management needs</Text>,
-    long: <Text c='dimmed'>A comprehensive assessment of your organization's current records management practices, identifying gaps and areas for improvement. Our team will help you understand the volume, type, and sensitivity of the records you manage, enabling the development of a tailored, scalable records management program that meets both current and future needs.</Text>
+    icon: <IconListDetails size={30} color={colors[6]} />,
+    value: 'Compliance Services Assessment',
+    short: "Ensuring Your Organization Stays Ahead of Legal Requirements",
+    long: "Our compliance services are designed to ensure that your organization not only meets but exceeds the regulatory requirements relevant to your industry. From conducting comprehensive records management program needs assessments to developing robust records management policies, we have you covered. Our team also specializes in the assessment and development of records retention schedules, ensuring your organization maintains compliance while efficiently managing information lifecycle. Through our compliance audit services, we identify gaps and opportunities for improvement, ensuring your records management practices are both compliant and optimized for performance."
   },
   {
-    icon: <IconFiles size={30} />,
-    value: 'Record Management Policies',
-    short: <Text>Craft policies centering integrity, access, and confidentiality</Text>,
-    long: <Text c='dimmed'>Developing robust records management policies is crucial for maintaining the integrity, confidentiality, and accessibility of information. Our experts will work with you to craft bespoke policies that align with industry standards and regulatory requirements, ensuring your records management processes are both efficient and compliant.</Text>
+    icon: <IconFiles size={30} color={colors[6]} />,
+    value: 'Programming Services',
+    short: "Tailoring Records Management to Fit Your Organization",
+    long: "In the realm of programming services, Oakes Consulting focuses on the development and assessment of programs that are the backbone of effective records management. We offer organizational assessments to understand your current state, followed by the development of training programs to uplift your team's records management capabilities. Recognizing the need for flexibility and expertise, we also provide interim management roles, ensuring that your organization never skips a beat in its journey towards enhanced records management."
   },
   {
-    icon: <IconClockRecord size={30} />,
-    value: 'Retention Schedules',
-    short:<Text>Implement retention timelines to meet compliance and operational needs</Text>,
-    long: <Text c='dimmed'>Efficiently manage the lifecycle of your records with customized retention schedules that balance legal compliance and operational needs. Our service ensures your organization retains records for the appropriate duration, optimizing storage resources while minimizing risk related to information over-retention or premature destruction.</Text>
+    icon: <IconClockRecord size={30} color={colors[6]} />,
+    value: 'Accessibility Solutions',
+    short: "Streamlining Access to Maximize Efficiency",
+    long: "Our accessibility solutions are crafted to ensure that your organization's records are not just stored, but are easily retrievable and effectively managed. This includes developing file classification systems and taxonomies that make sense for your business, conducting thorough inventories to know exactly what you have and where, and planning your office and records center spaces for optimal efficiency. These services are pivotal in reducing time spent searching for records and increasing the overall productivity of your organization."
   },
   {
-    icon: <IconAdjustmentsCheck size={30} />,
-    value: 'Privacy & Audit Compliance',
-    short: <Text>Stringent adherence to privacy laws, safeguarding against breaches</Text>,
-    long: <Text c='dimmed'>Our privacy compliance service focuses on ensuring your records management practices conform to the latest privacy laws and regulations. We provide guidance on safeguarding sensitive information, reducing the risk of data breaches, and maintaining trust with your stakeholders through rigorous compliance measures.</Text>
+    icon: <IconAdjustmentsCheck size={30} color={colors[6]} />,
+    value: 'Business Continuity',
+    short: "Planning for the Unexpected with Confidence",
+    long: "Business continuity planning is critical to ensuring your organization can withstand and quickly recover from disruptions. Our services in this area include developing vital records programs, conducting risk assessments, and creating business and resource planning strategies. By identifying your essential records and assessing potential risks, we ensure that your organization is prepared for the unexpected, keeping your operations running smoothly in any scenario."
   },
   {
-    icon: <IconScale size={30} />,
-    value: 'Litigation Support',
-    short:<Text>Crucial litigation documentation management</Text>,
-    long: <Text c='dimmed'>Our litigation support service provides essential assistance in managing documentation for legal proceedings. We offer strategic advice on document retention, retrieval, and organization, ensuring you have the necessary support for efficient and effective litigation management.</Text>
+    icon: <IconScale size={30} color={colors[6]} />,
+    value: 'Technology Integration',
+    short: "Assessing and Implementing the Right Solutions for You",
+    long: "In today's digital age, technology plays a crucial role in effective records management. Our technology integration services include comprehensive assessments of your electronic infrastructure and electronic records management readiness, helping you understand where you stand and what improvements can be made. We also assist in the identification and selection of appropriate vendors and software, ensuring that the technology solutions implemented are perfectly suited to your organization's needs."
   },
 ]
 
 export const Services = (menuSelection: any) => {
   return (
     <Box>
-      <Center>
-          <Card shadow="sm" padding="lg" radius="md" withBorder w='80%'>
-            <img src={img}style={{ width: '100%' }} />
-          </Card>
-      </Center>
-
-        <Space h="xl" />
-        <Accordion defaultValue={ menuSelection || services[0].value }>
-        {services.map((item) => (
-          <Accordion.Item key={item.value} value={item.value}>
-            <Accordion.Control icon={item.icon}><>{item.value}{item.short}</></Accordion.Control>
-            <Accordion.Panel>{item.long}</Accordion.Panel>
-          </Accordion.Item>
-        ))}
-      </Accordion>
+      <Grid>
+        <Grid.Col span={{ base: 12, md: 6, lg: 9 }}>
+          <Accordion defaultValue={ menuSelection || services[0].value }>
+            {services.map((item) => (
+              <Accordion.Item key={item.value} value={item.value}>
+                <Accordion.Control icon={item.icon}>
+                  <>
+                  <Title order={3} style={{ color: colors[6], fontVariant: 'small-caps', fontWeight: '400' }}>{item.value}</Title>
+                  <Text>{item.short}</Text></>
+                  </Accordion.Control>
+                <Accordion.Panel>
+                  <Text size='sm' p='xs' style={{ textAlign: 'justify'}}>{item.long}</Text>
+                </Accordion.Panel>
+              </Accordion.Item>
+            ))}
+          </Accordion>
+        </Grid.Col>
+        <Grid.Col span={{ base: 0, md: 0, lg: 3 }}>
+          <div style={{ width: '200px', overflow: 'hidden', height: '100%' }}>
+            <img src={img} style={{ height: '100%', width: '300%', objectFit: 'cover', position: 'relative', left: '-100%' }} />
+          </div>
+        </Grid.Col>
+      </Grid>
   </Box>
   )
 }
