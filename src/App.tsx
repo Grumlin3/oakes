@@ -96,7 +96,7 @@ function App() {
                     <Text>Contact</Text>
                   </Tabs.Tab>
                 </Group>
-                <Group>
+                <Group pb='sm'>
                   <Center>
                     <TextInput
                       value={searchQuery}
