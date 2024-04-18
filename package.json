@@ -1,5 +1,5 @@
 {
-  "homepage": "http://meritmalling.github.io/oakes",
+  "homepage": "http://patrickroakesconsulting.com",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development --open",
