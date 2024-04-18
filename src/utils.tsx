@@ -6,7 +6,7 @@ export const renderHighlightedText = (text: any, query: any) => {
     const regex = new RegExp(`(${query})`, 'gi')
     const parts = text.split(regex)
     return parts.map((part: any, index: any) => regex.test(part) 
-      ? <span key={index} style={{ color:  colors[6] }}><strong>{part}</strong></span> 
+      ? <span key={index} style={{ color:  colors[8] }}><strong>{part}</strong></span> 
       : part);
   } catch (e) {
     return text

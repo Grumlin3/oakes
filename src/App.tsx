@@ -14,7 +14,8 @@ import {
   Button,
   Group,
   Stack,
-  Box
+  Box,
+  Title
 } from '@mantine/core'
 
 import Home from './pages/HomeTab'
@@ -71,32 +72,34 @@ function App() {
     <MantineProvider theme={siteTheme}>
       <AppShell>
         <Container size='md' p='md'>
-            <Group>
-              <img src={logo} className="logo"/>
-              <Text className="tagline">Strategic Advisory<br/>& Consulting Services</Text>
-            </Group>
+              <Stack style={{ color: colors[8] }}>
+                <Center>
+                  <Title>Patrick R. Oakes</Title>
+                </Center>
+                <Center>
+                  <Title order={3}>Strategic Advisory & Consulting Services</Title>
+                </Center>
+              </Stack>
           <Space h="sm" />
-          <Tabs color={colors[5]} value={activeTab} onChange={handleChangeTab}>
+          <Tabs color={colors[8]} value={activeTab} onChange={handleChangeTab}>
             <Tabs.List className="mobile-tabs">
               <Group justify="space-between" className='tabsList'>
-                <Group>
                   <Tabs.Tab value="home">
                     <Text>Home</Text>
                   </Tabs.Tab>
                   <Tabs.Tab value="services" >
                     <Text className='tabsBreak'>Services</Text>
                   </Tabs.Tab>
-                  <Tabs.Tab value="about">
-                    <Text>About</Text>
-                  </Tabs.Tab>
                   <Tabs.Tab value="faqs">
                     <Text>FAQs</Text>
+                  </Tabs.Tab>
+                  <Tabs.Tab value="about">
+                    <Text>About</Text>
                   </Tabs.Tab>
                   <Tabs.Tab value="contact">
                     <Text>Contact</Text>
                   </Tabs.Tab>
-                </Group>
-                <Group pb='sm'>
+                {/* <Group pb='sm'>
                   <Center>
                     <TextInput
                       value={searchQuery}
@@ -107,9 +110,9 @@ function App() {
                         }
                       }}
                     />
-                    <Button color={colors[6]} onClick={handleSearch}><IconSearch /></Button>
+                    <Button color={colors[8]} onClick={handleSearch}><IconSearch /></Button>
                   </Center>
-                </Group>
+                </Group> */}
               </Group>
             </Tabs.List>
             <Space h="xl" />

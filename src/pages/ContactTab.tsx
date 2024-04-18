@@ -22,16 +22,16 @@ export default ({searchQuery}: any) => {
     },
   })
 
-  const googleFormUrl='https://docs.google.com/forms/d/e/1FAIpQLSceFF8Uymm3_UNrBih8a_uHoaUMT-P_HrtMp1BzumDdq_vdvg/formResponse?'
+  const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSditr8VldQyyrndZKOpQyUgWzTzR3pCQQbUbss8hJ89mKfSHQ/formResponse?'
   const sendInfo = useCallback(
       async ({ name, employer, email, query }: any) => {
           await fetch(
             googleFormUrl +
               new URLSearchParams({
-                "entry.796953387": name,
-                "entry.1997181444": employer,
-                "entry.768626585": email,
-                "entry.9454861": query,
+                "entry.1416258321": name,
+                "entry.425906072": employer,
+                "entry.1086547357": email,
+                "entry.2113273261": query,
               }),
             {
               mode: "no-cors",
@@ -45,14 +45,14 @@ export default ({searchQuery}: any) => {
 
   return (
     <Box>
-      <Title order={2} style={{ color: colors[6], fontVariant: 'small-caps', fontWeight: '400' }}>Get in touch with us</Title>
+      <Title order={2} style={{ color: colors[8], fontVariant: 'small-caps', fontWeight: '400' }}><strong>Get in touch with us</strong></Title>
       <Space h="xs" />
       <Text size='sm'>
         {renderHighlightedText(contactUs, searchQuery)}
 
       </Text>
       <Space h="md" />
-      <Text color={colors[6]} size='sm'>Simplify connection with our contact form.</Text> 
+      <Text color={colors[8]} size='sm'>Simplify connection with our contact form.</Text> 
       <Text size='sm'>Please provide the following information and let us know how we can assist you.</Text> 
       <Space h="md" />
       <form onSubmit={form.onSubmit((values) => sendInfo(values))}>
@@ -89,18 +89,18 @@ export default ({searchQuery}: any) => {
           {...form.getInputProps('query', { type: 'input' })}
           />
         <Group justify="left" mt='lg'>
-          <Button color={colors[6]} type="submit" style={{ fontVariant: 'small-caps'}}>Submit</Button>
+          <Button color={colors[8]} type="submit" style={{ fontVariant: 'small-caps'}}>Submit</Button>
         </Group>
       </form>
       <Space h="lg" />
 
       <Group m='xs'>
-        <IconMail color={colors[6]} size={30}/> 
+        <IconMail color={colors[8]} size={30}/> 
         <Text size='md' c='dimmed' style={{ fontVariant: 'small-caps' }}>P.O. Box 31225, Seattle WA, 98103</Text>
       </Group>
 
       <Group m='xs'>
-        <IconAt color={colors[6]} size={30}/> 
+        <IconAt color={colors[8]} size={30}/> 
         <Text size='md' c='dimmed' style={{ fontVariant: 'small-caps' }}>patrickroakesconsulting@gmail.com</Text>
       </Group>
      

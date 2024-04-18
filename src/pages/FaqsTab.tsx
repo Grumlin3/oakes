@@ -40,12 +40,12 @@ export default ({searchQuery}: any) => {
   console.log('searchQuery faqs', searchQuery)
   return (
     <Box>
-      <Title order={2} style={{ color: colors[6], fontVariant: 'small-caps', fontWeight: '400' }}>Frequently Asked Questions</Title>
+      <Title order={2} style={{ color: colors[8], fontVariant: 'small-caps', fontWeight: '400' }}><strong>Frequently Asked Questions</strong></Title>
       {faqs.map((item) => (
         <Stack key={item.question}>
           <Space h="md" />
           <Box size='grow'>
-            <Blockquote icon={<IconQuote />} color={colors[6]}>
+            <Blockquote icon={<IconQuote />} color={colors[8]}>
               {renderHighlightedText(item.question, searchQuery)}
             </Blockquote>
           </Box>

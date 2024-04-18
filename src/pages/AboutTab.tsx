@@ -1,7 +1,8 @@
-import { Timeline, Text, Box, Space, Title } from '@mantine/core'
+import { Timeline, Text, Box, Space, Title, Grid } from '@mantine/core'
 import { IconAccessPoint, IconShieldHalfFilled, IconUsers, IconWorldCheck  } from '@tabler/icons-react'
 import { colors } from '../theme'
 import { renderHighlightedText } from '../utils'
+import patrick from '../../public/patrick.jpg'
 
 export const about = [
   {
@@ -31,19 +32,26 @@ export const about = [
 ]
 
 export default ({searchQuery}: any) => {
-  console.log('searchQuery about', searchQuery)
-
   return (
     <Box>
-      <Timeline active={6} bulletSize={50} lineWidth={2} color={colors[6]}>
-      {about.map((item) => (
-        <Timeline.Item key={item.value} bullet={item.icon} title={<Title order={3} style={{ color: colors[6], fontVariant: 'small-caps', fontWeight: '400' }}>{item.value}</Title>}>
-          <Text size='sm' pr='lg' style={{ textAlign: 'justify' }}>
-            {renderHighlightedText(item.long, searchQuery)}
-          </Text>
-        </Timeline.Item>
-      ))}
-      </Timeline>
+     
+        <Grid>
+          <Grid.Col span={5}>
+          <img src={patrick} style={{ width: '100%'}}/>
+          </Grid.Col>
+          <Grid.Col span={7}>
+            <Timeline active={6} bulletSize={50} lineWidth={2} color={colors[8]}>
+              {about.map((item) => (
+                <Timeline.Item key={item.value} bullet={item.icon} title={<Title order={3} style={{ color: colors[8], fontVariant: 'small-caps', fontWeight: '400' }}><strong>{item.value}</strong></Title>}>
+                  <Text size='sm' pr='lg' style={{ textAlign: 'justify' }}>
+                    {renderHighlightedText(item.long, searchQuery)}
+                  </Text>
+                </Timeline.Item>
+              ))}
+            </Timeline>
+          </Grid.Col>
+        </Grid>
+
       <Space h="xl" />
       <Space h="xl" />
     </Box>
