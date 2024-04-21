@@ -43,6 +43,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.bundle.js',
-    publicPath: process.env.LOCAL ? '/' : '/oakes/'
+    publicPath: '/'
   },
 }
