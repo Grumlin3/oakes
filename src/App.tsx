@@ -24,13 +24,16 @@ import About from './pages/AboutTab'
 import Services from './pages/ServicesTab'
 import Faqs from './pages/FaqsTab'
 
-import { IconSearch } from '@tabler/icons-react'
+// import { IconSearch } from '@tabler/icons-react'
 
+import '@mantine/carousel/styles.css';
 import { searchMap } from './utils'
+import { useMediaQuery } from '@mantine/hooks'
 
-import logo from '../public/OakesLogo.jpg'
+// import logo from '../public/OakesLogo.jpg'
 
 function App() {
+  const isSmallerThanLarge = useMediaQuery('(max-width: 62em)');
   const [activeTab, setActiveTab] = useState<string>('home')
   const [searchQuery, setSearchQuery] = useState<string>('')
   const [lastSearchQuery, setLastSearchQuery] = useState<string>('')
@@ -72,32 +75,46 @@ function App() {
     <MantineProvider theme={siteTheme}>
       <AppShell>
         <Container size='md' p='md'>
-              <Stack style={{ color: colors[8] }}>
-                <Center>
-                  <Title>Patrick R. Oakes</Title>
+              <Stack style={{ color: colors[8], fontVariant: 'small-caps'}} onClick={() => setActiveTab('home')}>
+                <Center >
+                  <Title mt='xs' style={{ fontFamily: 'PT Serif, serif', fontWeight: '900' }}>Patrick R. Oakes</Title>
                 </Center>
-                <Center>
-                  <Title order={3}>Strategic Advisory & Consulting Services</Title>
-                </Center>
+                {!isSmallerThanLarge ? 
+                  (<Center>
+                    <Title mt='-16px' mb='lg' order={2} style={{ fontFamily: 'PT Serif, serif', fontWeight: 100 }}>Strategic Advisory & Consulting Services</Title>
+                  </Center>) : 
+                  (
+                    <Stack>
+                      <Center>
+                        <Title mt='-16px' order={2} style={{ fontFamily: 'PT Serif, serif', fontWeight: 100 }}>Strategic Advisory</Title>
+                      </Center>
+                      <Center>
+                      <Title mt='-16px' mb='lg' order={2} style={{ fontFamily: 'PT Serif, serif', fontWeight: 100 }}>& Consulting Services</Title>
+                      </Center>
+                    </Stack>
+                  )
+                }
               </Stack>
           <Space h="sm" />
           <Tabs color={colors[8]} value={activeTab} onChange={handleChangeTab}>
-            <Tabs.List className="mobile-tabs">
+            <Tabs.List>
               <Group justify="space-between" className='tabsList'>
-                  <Tabs.Tab value="home">
-                    <Text>Home</Text>
-                  </Tabs.Tab>
+                  {!isSmallerThanLarge && (
+                    <Tabs.Tab value="home">
+                      <Text style={{ fontVariant: 'small-caps'}}>Home</Text>
+                    </Tabs.Tab>
+                  )}
                   <Tabs.Tab value="services" >
-                    <Text className='tabsBreak'>Services</Text>
+                    <Text style={{ fontVariant: 'small-caps' }}>Services</Text>
                   </Tabs.Tab>
                   <Tabs.Tab value="faqs">
-                    <Text>FAQs</Text>
+                    <Text style={{ fontVariant: 'small-caps' }}>FAQs</Text>
                   </Tabs.Tab>
                   <Tabs.Tab value="about">
-                    <Text>About</Text>
+                    <Text style={{ fontVariant: 'small-caps' }}>About</Text>
                   </Tabs.Tab>
                   <Tabs.Tab value="contact">
-                    <Text>Contact</Text>
+                    <Text style={{ fontVariant: 'small-caps' }}>Contact</Text>
                   </Tabs.Tab>
                 {/* <Group pb='sm'>
                   <Center>

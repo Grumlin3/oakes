@@ -73,14 +73,6 @@
   .tabsList {
     margin-top: -20px;
     margin-bottom: 15px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    gap: 0;
   }
-}
-
-.ptSerif {
-  font-family: "PT Serif", serif;
-  font-weight: 400;
-  font-style: normal;
 }

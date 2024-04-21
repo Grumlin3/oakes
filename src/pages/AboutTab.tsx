@@ -3,6 +3,7 @@ import { IconAccessPoint, IconShieldHalfFilled, IconUsers, IconWorldCheck  } fro
 import { colors } from '../theme'
 import { renderHighlightedText } from '../utils'
 import patrick from '../../public/patrick.jpg'
+import { useMediaQuery } from '@mantine/hooks'
 
 export const about = [
   {
@@ -32,18 +33,20 @@ export const about = [
 ]
 
 export default ({searchQuery}: any) => {
+  const isSmallerThanLarge = useMediaQuery('(max-width: 61em)');
+
   return (
     <Box>
      
-        <Grid>
-          <Grid.Col span={5}>
-          <img src={patrick} style={{ width: '100%'}}/>
+        <Grid overflow='hidden'>
+        <Grid.Col span={{ base: 12, xs: 12, sm: 5, md: 5, lg: 5, xl: 5 }}>
+            <img src={patrick} style={{ width: isSmallerThanLarge ? '80%' : '100%', margin: 'auto', display: 'block' }}/>
           </Grid.Col>
-          <Grid.Col span={7}>
+          <Grid.Col span={{ base: 12, xs: 12, sm: 7, md: 7, lg: 7, xl: 7 }}>
             <Timeline active={6} bulletSize={50} lineWidth={2} color={colors[8]}>
               {about.map((item) => (
                 <Timeline.Item key={item.value} bullet={item.icon} title={<Title order={3} style={{ color: colors[8], fontVariant: 'small-caps', fontWeight: '400' }}><strong>{item.value}</strong></Title>}>
-                  <Text size='sm' pr='lg' style={{ textAlign: 'justify' }}>
+                  <Text size='sm' pr='lg' style={{ textAlign: 'justify', marginTop: isSmallerThanLarge ? '20px' : '0px', marginLeft: isSmallerThanLarge ? '-20px' : '0px' }}>
                     {renderHighlightedText(item.long, searchQuery)}
                   </Text>
                 </Timeline.Item>

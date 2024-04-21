@@ -1,8 +1,14 @@
 import { Title, Text, Space, Box, Divider, Group, Stack } from '@mantine/core'
 import { Icon24Hours, IconLayersIntersect, IconTrendingUp } from '@tabler/icons-react'
-import img from '../../public/dalle1.jpg'
+import one from '../../public/1000_F_110634290_r1ukAMjnWQOarL7Huf2HE3dDJBqeEgrv.jpg'
+import two from '../../public/1000_F_423010740_CAPA1sCD7wXQfL26bXZm2SsKeSdYUntX.jpg'
+import three from '../../public/1000_F_476229783_TPapcc3hOevTkozUBgKyzCKnSwGWCc0b.jpg'
 import { colors } from '../theme'
 import { renderHighlightedText } from '../utils'
+
+import { useRef } from 'react'
+import Autoplay from 'embla-carousel-autoplay';
+import { Carousel } from '@mantine/carousel';
 
 const home = [
   { 
@@ -23,13 +29,26 @@ const home = [
 ]
 
 export default ({searchQuery}: any) => {
-  console.log('searchQuery home', searchQuery)
-
+  const autoplay = useRef(Autoplay({ delay: 2000 }))
   return (
     <Box>
-      <div style={{ height: '200px', overflow: 'hidden', width: '100%' }}>
-          <img src={img} style={{ width: '100%', height: 'auto', objectFit: 'cover', position: 'relative', top: '-33.33%' }} />
-      </div>
+      <Carousel
+        withIndicators
+        height={200}
+        plugins={[autoplay.current]}
+        onMouseEnter={autoplay.current.stop}
+        onMouseLeave={autoplay.current.reset}
+      >
+        <Carousel.Slide>
+          <img src={one} style={{ width: '100%', height: 'auto', objectFit: 'cover', position: 'relative', top: '-33.33%' }} />
+        </Carousel.Slide>
+        <Carousel.Slide>
+          <img src={two} style={{ width: '100%', height: 'auto', objectFit: 'cover', position: 'relative', top: '-33.33%' }} />
+        </Carousel.Slide>
+        <Carousel.Slide>
+          <img src={three} style={{ width: '100%', height: 'auto', objectFit: 'cover', position: 'relative', top: '-33.33%' }} />
+        </Carousel.Slide>
+      </Carousel>
       {home.map((item) => (
         <Stack mb='-20px' key={item.title}>
           <Space h="md" />
