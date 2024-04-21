@@ -1,8 +1,8 @@
 import { Title, Text, Space, Box, Divider, Group, Stack } from '@mantine/core'
 import { Icon24Hours, IconLayersIntersect, IconTrendingUp } from '@tabler/icons-react'
 import one from '../../public/1000_F_110634290_r1ukAMjnWQOarL7Huf2HE3dDJBqeEgrv.jpg'
-import two from '../../public/1000_F_423010740_CAPA1sCD7wXQfL26bXZm2SsKeSdYUntX.jpg'
-import three from '../../public/1000_F_476229783_TPapcc3hOevTkozUBgKyzCKnSwGWCc0b.jpg'
+import two from '../../public/1000_F_473517308_5YQ2xfnN8IlJ0DKdRY2glLZTSdGpHLPt.jpg'
+import three from '../..//public/dalleoakes.jpg'
 import { colors } from '../theme'
 import { renderHighlightedText } from '../utils'
 
@@ -54,7 +54,7 @@ export default ({searchQuery}: any) => {
           <Space h="md" />
           <Group>
             {item.icon}
-            <Title order={3} style={{ color: colors[8], fontVariant: 'small-caps', fontWeight: '400' }}><strong>{item.title}</strong></Title>
+            <Title order={3} style={{ color: colors[8], fontVariant: 'small-caps', fontWeight: '400', whitespace: 'normal', maxWidth: '85%' }}><strong>{item.title}</strong></Title>
           </Group>
           <Divider color={colors[8]} p='xs'/>
           <Text size="sm" mt='-20px' style={{ textAlign: 'justify' }}>
