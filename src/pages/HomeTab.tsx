@@ -1,8 +1,8 @@
 import { Title, Text, Space, Box, Divider, Group, Stack } from '@mantine/core'
 import { Icon24Hours, IconLayersIntersect, IconTrendingUp } from '@tabler/icons-react'
-import one from '../../public/1000_F_110634290_r1ukAMjnWQOarL7Huf2HE3dDJBqeEgrv.jpg'
-import two from '../../public/1000_F_473517308_5YQ2xfnN8IlJ0DKdRY2glLZTSdGpHLPt.jpg'
-import three from '../..//public/dalleoakes.jpg'
+import three from '../../public/AdobeStock_515183251.jpg'
+import two from '../../public/AdobeStock_745174148.jpg'
+import one from '../../public/AdobeStock_757769540.jpg'
 import { colors } from '../theme'
 import { renderHighlightedText } from '../utils'
 
@@ -34,19 +34,25 @@ export default ({searchQuery}: any) => {
     <Box>
       <Carousel
         withIndicators
-        height={200}
+        // height={300}
         plugins={[autoplay.current]}
         onMouseEnter={autoplay.current.stop}
         onMouseLeave={autoplay.current.reset}
       >
         <Carousel.Slide>
-          <img src={one} style={{ width: '100%', height: 'auto', objectFit: 'cover', position: 'relative', top: '-33.33%' }} />
+          <div style={{ width: '100%', height: '300px', overflow: 'hidden', position: 'relative' }}>
+            <img src={one} style={{ width: '100%', height: 'auto' }} />
+          </div>
         </Carousel.Slide>
         <Carousel.Slide>
-          <img src={two} style={{ width: '100%', height: 'auto', objectFit: 'cover', position: 'relative', top: '-33.33%' }} />
+          <div style={{ width: '100%', height: '300px', overflow: 'hidden', position: 'relative' }}>
+            <img src={two} style={{ width: '100%', height: 'auto' }} />
+          </div>
         </Carousel.Slide>
         <Carousel.Slide>
-          <img src={three} style={{ width: '100%', height: 'auto', objectFit: 'cover', position: 'relative', top: '-33.33%' }} />
+          <div style={{ width: '100%', height: '300px', overflow: 'hidden', position: 'relative' }}>
+            <img src={three} style={{ width: '100%', position: 'absolute', top: '50%', transform: 'translateY(-43%)' }} />
+          </div>
         </Carousel.Slide>
       </Carousel>
       {home.map((item) => (

@@ -2,11 +2,12 @@ import { Title, Text, Space, Box, Stack, Blockquote, Grid, Accordion } from '@ma
 import { IconQuote } from '@tabler/icons-react'
 import { colors } from '../theme'
 // import { renderHighlightedText } from '../utils'
-import stages from '../../public/stages.jpg'
+import stages from '../../public/RIM Program Assets.jpg'
 import gears from '../../public/rimgears.jpg'
-import img from '../../public/dalle1.jpg'
+// import img from '../../public/AdobeStock_722989577.jpg'
 import { useState, useEffect } from 'react'
 import { useMediaQuery } from '@mantine/hooks'
+import img from '../../public/AdobeStock_435970069.jpg'
 
 const faqs = [
   {
@@ -60,7 +61,7 @@ export default ({ searchQuery }: any) => {
       {!isSmallerThanLarge && 
           <Grid.Col span={{ base: 0, xs: 0, sm: 0, md: 0, lg: 3, xl: 3 }}>
             <div style={{ width: '200px', overflow: 'hidden', height: '100%' }}>
-              <img src={img} style={{ height: '100%', width: '300%', objectFit: 'cover', position: 'relative', left: '-100%' }} />
+            <img src={img} style={{ height: '100%', width: '200%', objectFit: 'cover', position: 'relative', left: '-100%' }} />
             </div>
           </Grid.Col>}
         <Grid.Col span={{ base: 12, md: 9, lg: 9 }}>

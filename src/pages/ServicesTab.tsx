@@ -1,7 +1,8 @@
 import { Accordion, Text, Grid, Box, Title } from '@mantine/core';
 import { IconAccessible, IconCloudLock, IconDeviceDesktopAnalytics, IconChecklist, IconFileAnalytics } from '@tabler/icons-react';
 import { colors } from '../theme';
-import img from '../../public/dalle1.jpg'
+// import img from '../../public/AdobeStock_757769540.jpg'
+import img from '../../public/AdobeStock_435970069.jpg'
 import { useMediaQuery } from '@mantine/hooks';
 import { renderHighlightedText} from '../utils';
 import { useState, useEffect } from 'react';
@@ -79,7 +80,7 @@ export default ({ searchQuery }: any) => {
         {!isSmallerThanLarge && 
           <Grid.Col span={{ base: 0, xs: 0, sm: 0, md: 0, lg: 3, xl: 3 }}>
             <div style={{ width: '200px', overflow: 'hidden', height: '100%' }}>
-              <img src={img} style={{ height: '100%', width: '300%', objectFit: 'cover', position: 'relative', left: '-100%' }} />
+              <img src={img} style={{ height: '100%', width: '200%', objectFit: 'cover', position: 'relative', left: '-100%' }} />
             </div>
           </Grid.Col>}
       </Grid>

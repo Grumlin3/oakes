@@ -1,5 +1,5 @@
-import { Timeline, Text, Box, Space, Title, Grid } from '@mantine/core'
-import { IconAccessPoint, IconShieldHalfFilled, IconUsers, IconWorldCheck  } from '@tabler/icons-react'
+import { Timeline, Text, Box, Space, Title, Grid, Stack, Group, Divider } from '@mantine/core'
+import { IconAccessPoint, IconCertificate, IconShieldHalfFilled, IconUsers, IconWorldCheck  } from '@tabler/icons-react'
 import { colors } from '../theme'
 import { renderHighlightedText } from '../utils'
 import patrick from '../../public/patrick.jpg'
@@ -41,6 +41,34 @@ export default ({searchQuery}: any) => {
         <Grid overflow='hidden'>
         <Grid.Col span={{ base: 12, xs: 12, sm: 5, md: 5, lg: 5, xl: 5 }}>
             <img src={patrick} style={{ width: isSmallerThanLarge ? '80%' : '100%', margin: 'auto', display: 'block' }}/>
+            <Space h="md" />
+            <Stack>
+              <Title order={3} style={{ fontVariant: 'small-caps', color: colors[8]  }}>Accreditations</Title>
+              <Divider mt='-10px' />
+              <Group>
+                <IconCertificate color={colors[8]} size={30} />
+                <Title order={5} style={{ whitespace: 'normal', maxWidth: '85%' }}>Certified Records Analyst <br/> Institute of Certified Records Managers (ICRM)</Title>
+              </Group>
+              <Group>
+                <IconCertificate color={colors[8]} size={30} />
+                <Title order={5} style={{ whitespace: 'normal', maxWidth: '85%' }}>Masters in Nonprofit Management <br/> Regis University</Title>
+              </Group>
+
+              <Title order={3} style={{ fontVariant: 'small-caps', color: colors[8] }}>Certificates</Title>
+              <Divider mt='-10px' />
+              <Group>
+                <IconCertificate color={colors[8]} size={30} />
+                <Title order={5} style={{ whitespace: 'normal', maxWidth: '85%' }}>Records & Information Management <br/> ARMA International</Title>
+              </Group>
+              <Group>
+                <IconCertificate color={colors[8]} size={30} />
+                <Title order={5} style={{ whitespace: 'normal', maxWidth: '85%' }}>Program Management</Title>
+              </Group>
+              <Group>
+                <IconCertificate color={colors[8]} size={30} />
+                <Title order={5} style={{ whitespace: 'normal', maxWidth: '85%' }}>Leadership Development</Title>
+              </Group>
+            </Stack>
           </Grid.Col>
           <Grid.Col span={{ base: 12, xs: 12, sm: 7, md: 7, lg: 7, xl: 7 }}>
             <Timeline active={6} bulletSize={50} lineWidth={2} color={colors[8]}>
