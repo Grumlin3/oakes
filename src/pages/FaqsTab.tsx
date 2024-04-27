@@ -3,11 +3,13 @@ import { IconQuote } from '@tabler/icons-react'
 import { colors } from '../theme'
 // import { renderHighlightedText } from '../utils'
 import stages from '../../public/RIM Program Assets.jpg'
-import gears from '../../public/rimgears.jpg'
+// import gears from '../../public/rimgears.jpg'
 // import img from '../../public/AdobeStock_722989577.jpg'
 import { useState, useEffect } from 'react'
 import { useMediaQuery } from '@mantine/hooks'
 import img from '../../public/AdobeStock_435970069.jpg'
+// import React, { Component } from 'react'
+import video from '../../public/rim.mp4'
 
 const faqs = [
   {
@@ -34,7 +36,7 @@ const faqs = [
   {
     question: "Does Records & Information Management have an ISO?",
     answer: "Yes, the International Organization for Standardization (ISO) is ISO 15489.",
-    img: <img src={gears} style={{ width: '30%', display: 'block', margin: 'auto' }} />,
+    img: <video autoPlay loop src={video} style={{ width: '100%', display: 'block', margin: 'auto' }}></video>,
   }
 ]
 

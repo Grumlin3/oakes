@@ -29,6 +29,16 @@ module.exports = {
           loader: 'url-loader',
         },
       },
+      {
+        test: /\.mp4$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'videos/' // Change the output path as needed
+          }
+        }
+      }
     ],
   },
   resolve: {
