@@ -1,14 +1,14 @@
 import { Title, Text, Space, Box, Divider, Group, Stack } from '@mantine/core'
 import { Icon24Hours, IconLayersIntersect, IconTrendingUp } from '@tabler/icons-react'
-import three from '../../public/AdobeStock_515183251.jpg'
+import three from '../../public/AdobeStock_435970069.jpg'
 import two from '../../public/AdobeStock_745174148.jpg'
 import one from '../../public/AdobeStock_757769540.jpg'
 import { colors } from '../theme'
 import { renderHighlightedText } from '../utils'
-
 import { useRef } from 'react'
 import Autoplay from 'embla-carousel-autoplay';
 import { Carousel } from '@mantine/carousel';
+import { useMediaQuery } from '@mantine/hooks'
 
 const home = [
   { 
@@ -30,28 +30,30 @@ const home = [
 
 export default ({searchQuery}: any) => {
   const autoplay = useRef(Autoplay({ delay: 2000 }))
+  const isMobile = useMediaQuery('(max-width: 36em)');
+  const carouselHeight = isMobile ? '100px' : '210px';
+
   return (
     <Box>
       <Carousel
         withIndicators
-        // height={300}
         plugins={[autoplay.current]}
         onMouseEnter={autoplay.current.stop}
         onMouseLeave={autoplay.current.reset}
       >
         <Carousel.Slide>
-          <div style={{ width: '100%', height: '300px', overflow: 'hidden', position: 'relative' }}>
-            <img src={one} style={{ width: '100%', height: 'auto' }} />
-          </div>
-        </Carousel.Slide>
-        <Carousel.Slide>
-          <div style={{ width: '100%', height: '300px', overflow: 'hidden', position: 'relative' }}>
-            <img src={two} style={{ width: '100%', height: 'auto' }} />
-          </div>
-        </Carousel.Slide>
-        <Carousel.Slide>
-          <div style={{ width: '100%', height: '300px', overflow: 'hidden', position: 'relative' }}>
-            <img src={three} style={{ width: '100%', position: 'absolute', top: '50%', transform: 'translateY(-43%)' }} />
+            <div style={{ width: '100%', height: carouselHeight, overflow: 'hidden', position: 'relative' }}>
+              <img src={one} style={{ width: '100%', position: 'absolute', top: '50%', transform: 'translateY(-50%)' }}/>
+            </div>
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <div style={{ width: '100%', height: carouselHeight, overflow: 'hidden', position: 'relative' }}>
+              <img src={two} style={{ width: '100%', position: 'absolute', top: '50%', transform: 'translateY(-50%)' }} />
+            </div>
+          </Carousel.Slide>
+          <Carousel.Slide>
+          <div style={{ width: '100%', height: carouselHeight, overflow: 'hidden', position: 'relative' }}>
+            <img src={three} style={{ width: '100%', position: 'absolute', top: '50%', transform: 'translateY(-50%)' }} />
           </div>
         </Carousel.Slide>
       </Carousel>
