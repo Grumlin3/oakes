@@ -154,7 +154,7 @@ function App() {
           <Space h="xl" />
           <Center>
             <Text c='dimmed' size='xs'>
-              ©2024 Oakes Consulting. All rights reserved.
+              ©2024 Patrick R. Oakes Consulting. All rights reserved.
             </Text>
           </Center>
           <Space h="xl" />

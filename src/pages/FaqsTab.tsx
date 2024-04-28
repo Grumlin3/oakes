@@ -36,7 +36,7 @@ const faqs = [
   {
     question: "Does Records & Information Management have an ISO?",
     answer: "Yes, the International Organization for Standardization (ISO) is ISO 15489.",
-    img: <video autoPlay loop src={video} style={{ width: '100%', display: 'block', margin: 'auto' }}></video>,
+    img: <video autoPlay loop src={video} style={{ width: '100%', display: 'block', margin: 'auto', clipPath: 'inset(1px 1px)' }}></video>,
   }
 ]
 
@@ -63,7 +63,7 @@ export default ({ searchQuery }: any) => {
       {!isSmallerThanLarge && 
           <Grid.Col span={{ base: 0, xs: 0, sm: 0, md: 0, lg: 3, xl: 3 }}>
             <div style={{ width: '200px', overflow: 'hidden', height: '100%' }}>
-            <img src={img} style={{ height: '100%', width: '200%', objectFit: 'cover', position: 'relative', left: '-100%' }} />
+              <img src={img} style={{ height: '100%', width: '200%', objectFit: 'cover', position: 'relative', left: '-100%' }} />
             </div>
           </Grid.Col>}
         <Grid.Col span={{ base: 12, md: 9, lg: 9 }}>
@@ -74,7 +74,7 @@ export default ({ searchQuery }: any) => {
                   <Title order={3} style={{ color: colors[8], fontVariant: 'small-caps', fontWeight: '400' }}><strong>{item.question}</strong></Title>
                 </Accordion.Control>
                 <Accordion.Panel>
-                  <Text size='sm' p='xs' style={{ textAlign: 'justify'}}>
+                  <Text size='sm' p='xs'>
                     {item.answer}
                   </Text>
                   {item.img && item.img}
@@ -82,6 +82,7 @@ export default ({ searchQuery }: any) => {
               </Accordion.Item>
             ))}
           </Accordion>
+          <Space h='50px'/>
         </Grid.Col>
       </Grid>
     </Box>

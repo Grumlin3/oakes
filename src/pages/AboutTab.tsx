@@ -22,7 +22,7 @@ export const about = [
     icon: <IconAccessPoint size={30} />,
     value: 'Intelligent Connections',
     short: 'Leveraging Relationships for Comprehensive Solutions',
-    long: "Patrick R Oakes Consulting prides itself on its extensive network of contacts, which spans across corporate, government, and nonprofit sectors. This vast network not only enriches our understanding of the records management landscape but also allows us to bring innovative and holistic solutions to our clients, ensuring they receive the best possible advice and services."
+    long: "Patrick R. Oakes Consulting prides itself on its extensive network of contacts, which spans across corporate, government, and nonprofit sectors. This vast network not only enriches our understanding of the records management landscape but also allows us to bring innovative and holistic solutions to our clients, ensuring they receive the best possible advice and services."
   },
   {
     icon: <IconShieldHalfFilled size={30} />,
@@ -74,7 +74,7 @@ export default ({searchQuery}: any) => {
             <Timeline active={6} bulletSize={50} lineWidth={2} color={colors[8]}>
               {about.map((item) => (
                 <Timeline.Item key={item.value} bullet={item.icon} title={<Title order={3} style={{ color: colors[8], fontVariant: 'small-caps', fontWeight: '400' }}><strong>{item.value}</strong></Title>}>
-                  <Text size='sm' pr='lg' style={{ textAlign: 'justify', marginTop: isSmallerThanLarge ? '20px' : '0px', marginLeft: isSmallerThanLarge ? '-20px' : '0px' }}>
+                  <Text size='sm' pr='lg' style={{ marginTop: isSmallerThanLarge ? '20px' : '0px', marginLeft: isSmallerThanLarge ? '-20px' : '0px' }}>
                     {renderHighlightedText(item.long, searchQuery)}
                   </Text>
                 </Timeline.Item>

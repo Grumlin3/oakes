@@ -14,7 +14,7 @@ const home = [
   { 
     icon: <Icon24Hours color={colors[8]} size={30}/>,
     title: "Modern Strategies for Today’s Programming",
-    text: 'Oakes Consulting redefines records management by strategically leveraging information as a vital asset for business growth, compliance, and efficiency. Beyond traditional approaches, we empower businesses to navigate legal and regulatory complexities, ensuring their success. By streamlining processes and adopting cutting-edge strategies, we transform records management into a powerful tool for reducing risks and costs, enhancing business intelligence, compliance, and operational efficiency.'
+    text: 'Patrick R. Oakes Consulting redefines records management by strategically leveraging information as a vital asset for business growth, compliance, and efficiency. Beyond traditional approaches, we empower businesses to navigate legal and regulatory complexities, ensuring their success. By streamlining processes and adopting cutting-edge strategies, we transform records management into a powerful tool for reducing risks and costs, enhancing business intelligence, compliance, and operational efficiency.'
   },
   { 
     icon: <IconLayersIntersect color={colors[8]} size={30}/>,
@@ -63,7 +63,7 @@ export default ({searchQuery}: any) => {
             <Title order={3} style={{ color: colors[8], fontVariant: 'small-caps', fontWeight: '400', whitespace: 'normal', maxWidth: '85%' }}><strong>{item.title}</strong></Title>
           </Group>
           <Divider color={colors[8]} p='xs'/>
-          <Text size="sm" mt='-20px' style={{ textAlign: 'justify' }}>
+          <Text size="sm" mt='-20px'>
             {renderHighlightedText(item.text, searchQuery)}
           </Text>
         </Stack>

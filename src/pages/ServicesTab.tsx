@@ -69,7 +69,7 @@ export default ({ searchQuery }: any) => {
                   <Text>{item.short}</Text>
                 </Accordion.Control>
                 <Accordion.Panel>
-                  <Text size='sm' p='xs' style={{ textAlign: 'justify'}}>
+                  <Text size='sm' p='xs'>
                     {renderHighlightedText(item.long, searchQuery)}
                   </Text>
                 </Accordion.Panel>
