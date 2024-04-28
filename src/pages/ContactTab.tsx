@@ -4,6 +4,7 @@ import { IconAt, IconMail } from '@tabler/icons-react'
 import { useCallback } from "react"
 import { colors } from '../theme'
 import { renderHighlightedText } from '../utils'
+import { useMediaQuery } from '@mantine/hooks'
 
 export default ({searchQuery}: any) => {
   const form = useForm({
@@ -42,6 +43,7 @@ export default ({searchQuery}: any) => {
     )
 
   const contactUs = "If you're facing challenges with Records Management or need an operational audit, we're here to help. Reach out to see how we can assist in elevating your organization's records management strategies."
+  const isSmallerThanLarge = useMediaQuery('(max-width: 62em)');
 
   return (
     <Box>
@@ -96,7 +98,7 @@ export default ({searchQuery}: any) => {
 
       <Group m='xs'>
         <IconMail color={colors[8]} size={30}/> 
-        <Text size='md' c='dimmed' style={{ fontVariant: 'small-caps' }}>113 Cherry St PMB 398160 Seattle, Washington 98104-2205</Text>
+        <Text size='md' c='dimmed' style={{ fontVariant: 'small-caps' }}>113 Cherry St PMB 398160 Seattle, {!isSmallerThanLarge && <br/>} Washington 98104-2205</Text>
       </Group>
 
       <Group m='xs'>

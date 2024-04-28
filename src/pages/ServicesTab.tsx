@@ -1,7 +1,6 @@
-import { Accordion, Text, Grid, Box, Title } from '@mantine/core';
+import { Accordion, Text, Grid, Box, Title, Space } from '@mantine/core';
 import { IconAccessible, IconCloudLock, IconDeviceDesktopAnalytics, IconChecklist, IconFileAnalytics } from '@tabler/icons-react';
 import { colors } from '../theme';
-// import img from '../../public/AdobeStock_757769540.jpg'
 import img from '../../public/AdobeStock_435970069.jpg'
 import { useMediaQuery } from '@mantine/hooks';
 import { renderHighlightedText} from '../utils';
@@ -76,6 +75,7 @@ export default ({ searchQuery }: any) => {
               </Accordion.Item>
             ))}
           </Accordion>
+          <Space h='50px'/>
         </Grid.Col>
         {!isSmallerThanLarge && 
           <Grid.Col span={{ base: 0, xs: 0, sm: 0, md: 0, lg: 3, xl: 3 }}>

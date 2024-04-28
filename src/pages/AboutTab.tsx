@@ -71,6 +71,7 @@ export default ({searchQuery}: any) => {
             </Stack>
           </Grid.Col>
           <Grid.Col span={{ base: 12, xs: 12, sm: 7, md: 7, lg: 7, xl: 7 }}>
+          {!isSmallerThanLarge && <Space h="xl" />}
             <Timeline active={6} bulletSize={50} lineWidth={2} color={colors[8]}>
               {about.map((item) => (
                 <Timeline.Item key={item.value} bullet={item.icon} title={<Title order={3} style={{ color: colors[8], fontVariant: 'small-caps', fontWeight: '400' }}><strong>{item.value}</strong></Title>}>
