@@ -98,7 +98,7 @@ export default ({searchQuery}: any) => {
 
       <Group m='xs'>
         <IconMail color={colors[8]} size={30}/> 
-        <Text size='md' c='dimmed' style={{ fontVariant: 'small-caps' }}>113 Cherry St PMB 398160 Seattle, {!isSmallerThanLarge && <br/>} Washington 98104-2205</Text>
+        <Text size='md' c='dimmed' style={{ fontVariant: 'small-caps' }}>113 Cherry St PMB 398160 <br /> Seattle, Washington 98104-2205</Text>
       </Group>
 
       <Group m='xs'>

@@ -75,7 +75,7 @@ export default ({ searchQuery }: any) => {
               </Accordion.Item>
             ))}
           </Accordion>
-          <Space h='50px'/>
+          <Space h='100px'/>
         </Grid.Col>
         {!isSmallerThanLarge && 
           <Grid.Col span={{ base: 0, xs: 0, sm: 0, md: 0, lg: 3, xl: 3 }}>
