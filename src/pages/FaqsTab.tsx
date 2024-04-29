@@ -1,22 +1,16 @@
-import { Title, Text, Space, Box, Stack, Blockquote, Grid, Accordion } from '@mantine/core'
-import { IconQuote } from '@tabler/icons-react'
+import { Title, Text, Space, Box, Grid, Accordion } from '@mantine/core'
 import { colors } from '../theme'
-// import { renderHighlightedText } from '../utils'
 import stages from '../../public/RIM Program Assets.jpg'
-// import gears from '../../public/rimgears.jpg'
-// import img from '../../public/AdobeStock_722989577.jpg'
 import { useState, useEffect } from 'react'
 import { useMediaQuery } from '@mantine/hooks'
-// import img from '../../public/AdobeStock_435970069.jpg'
+
 import img from '../../public/vertical.jpg'
-// import React, { Component } from 'react'
 import video from '../../public/rim.mp4'
 
 const faqs = [
   {
     question: "What is Records & Information Management?",
     answer: "Simply put, Records & Information Management or RIM, is knowing what records you have, where to locate them, and how long to keep them.",
-    img: <img src={stages} style={{ width: '70%', display: 'block', margin: 'auto' }} />,
   },
   {
     question: "Why is it important?",
@@ -29,6 +23,7 @@ const faqs = [
   {
     question: "What is a Records & Information Management Program?",
     answer: "A RIM Program helps preserve the integrity, accessibility, and value of a Company’s information. It provides individual and team guidance, training, and support to enable you to preserve useful, important Company records and get rid of unnecessary, outdated materials that are no longer needed.",
+    img: <img src={stages} style={{ width: '70%', display: 'block', margin: 'auto' }} />,
   },
   {
     question: "What are the benefits of a RIM Program?",

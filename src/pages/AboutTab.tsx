@@ -16,7 +16,7 @@ export const about = [
     icon: <IconUsers size={30} />,
     value: 'Client-Centric Solutions',
     short: 'Needs Based Strategies',
-    long: "Our approach is rooted in understanding the unique needs and challenges of our clients. Byadopting a policy by design mentality, we ensure that the solutions we develop are scalable, automated, and tailored to reduce legal and regulatory risks while minimizing costs. Our dedication to client satisfaction and maintaining low overhead ensures that we deliver high-quality, cost-effective services."
+    long: "Our approach is rooted in understanding the unique needs and challenges of our clients. By adopting a policy by design mentality, we ensure that the solutions we develop are scalable, automated, and tailored to reduce legal and regulatory risks while minimizing costs. Our dedication to client satisfaction and maintaining low overhead ensures that we deliver high-quality, cost-effective services."
   },
   {
     icon: <IconAccessPoint size={30} />,
