@@ -151,7 +151,6 @@ function App() {
           </Tabs>
         </Container>
         <AppShell.Footer>
-          <Space h="xl" />
           <Center>
             <Text c='dimmed' size='xs'>
               ©2024 Patrick R. Oakes Consulting. All rights reserved.
