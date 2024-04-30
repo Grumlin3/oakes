@@ -19,7 +19,7 @@ const home = [
   { 
     icon: <IconLayersIntersect color={colors[8]} size={30}/>,
     title: 'A New Paradigm Of Information Cultivation',
-    text: "Imagine a world where every piece of information is trusted and used confidently to move the business forward. Our vision is to lead businesses into this new reality by wielding records management as a powerful tool to maximize data value while minimizing redundant, obsolete, and transitory (ROT) information. We champion the cause of records &amp; information management (RIM) by embedding best practices into the DNA of your organization and complemented by comprehensive training and awareness."
+    text: "Imagine a world where every piece of information is trusted and used confidently to move the business forward. Our vision is to lead businesses into this new reality by wielding records management as a powerful tool to maximize data value while minimizing redundant, obsolete, and transitory (ROT) information. We champion the cause of records and information management (RIM) by embedding best practices into the DNA of your organization and complemented by comprehensive training and awareness."
   },
   { 
     icon: <IconTrendingUp color={colors[8]} size={30}/>,
