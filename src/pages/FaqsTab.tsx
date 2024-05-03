@@ -10,11 +10,11 @@ import video from '../../public/rim.mp4'
 const faqs = [
   {
     question: "What is Records & Information Management?",
-    answer: "Simply put, Records & Information Management or RIM, is knowing what records you have, where to locate them, and how long to keep them.",
+    answer: "Records & Information Management or RIM, is knowing what records you have, where to locate them, and how long to keep them.",
   },
   {
     question: "Why is it important?",
-    answer: "RIM helps preserve the integrity, accessibility, and value of a Company’s information. Adopting RIM best practices, it allows for employees to help the Company: Reduce risks associated with government, regulatory, and legal noncompliance; Reduce the risk of unnecessary documents or records containing confidential information being misused; and Save money and operate more efficiently.",
+    answer: "RIM helps preserve the integrity, accessibility, and value of a company’s information. Adopting RIM best practices allows for employees to help the company: reduce risks associated with government, regulatory, and legal noncompliance; reduce the risk of unnecessary documents or records containing confidential information being misused; and save money and operate more efficiently.",
   },
   {
     question: "Who is responsible for Records Management?",
@@ -22,12 +22,12 @@ const faqs = [
   },
   {
     question: "What is a Records & Information Management Program?",
-    answer: "A RIM Program helps preserve the integrity, accessibility, and value of a Company’s information. It provides individual and team guidance, training, and support to enable you to preserve useful, important Company records and get rid of unnecessary, outdated materials that are no longer needed.",
+    answer: "A RIM Program helps preserve the integrity, accessibility, and value of a company’s information. It provides individual and team guidance, training, and support to enable you to preserve useful, important company records and get rid of unnecessary, outdated materials that are no longer needed.",
     img: <img src={stages} style={{ width: '70%', display: 'block', margin: 'auto' }} />,
   },
   {
     question: "What are the benefits of a RIM Program?",
-    answer: "Protects essential business records (e.g., IP, Corporate Records, and Financials); Reduces compliance & litigation risks; Ensures data quality and hygiene; Cuts costs; and Enables people and systems to operate more efficiently.",
+    answer: "Protects essential business records (e.g., IP, Corporate Records, and Financials); reduces compliance & litigation risks; ensures data quality and hygiene; cuts costs; and enables people and systems to operate more efficiently.",
   },
   {
     question: "Does Records & Information Management have an ISO?",
